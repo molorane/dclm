@@ -1,0 +1,47 @@
+package com.blessy.application.service.internal;
+
+import com.blessy.application.model.CustomUserDetails;
+import com.blessy.application.model.Role;
+import com.blessy.application.model.User;
+import com.blessy.application.repository.UserRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.stereotype.Service;
+
+import javax.transaction.Transactional;
+import java.util.Optional;
+import java.util.Set;
+
+@Service
+public class UserDetailsServiceImpl implements UserDetailsService {
+
+	@Autowired
+	private UserRepository userRepository;
+	
+	@Transactional
+	@Override
+	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
+		Optional<User> optionalUser = userRepository.findByUsername(username);
+
+		optionalUser.orElseThrow(() -> new UsernameNotFoundException("Username " + username + " not found"));
+
+		toList(optionalUser.get().getRoles());
+
+		return optionalUser.map(users -> new CustomUserDetails(users)).get();
+
+//        if (optionalUser == null) {
+//            throw new UsernameNotFoundException(username);
+//        }
+//        toList(optionalUser.get().getRoles());
+//        return new CustomUserDetails(optionalUser.get());
+	}
+
+	public void toList(Set<Role> roles) {
+		for (Role role : roles) {
+			System.out.println("Role: " + role.getRole());
+		}
+	}
+
+}
