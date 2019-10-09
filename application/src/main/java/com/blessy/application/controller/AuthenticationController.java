@@ -2,6 +2,7 @@ package com.blessy.application.controller;
 
 import com.blessy.application.model.User;
 import com.blessy.application.service.IUserService;
+import com.blessy.application.utils.WebPage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -33,7 +34,7 @@ public class AuthenticationController {
 		    /* The user is logged in :) */
 		    return "redirect:/home";
 		}
-		return "login";
+		return WebPage.LOGIN.getPageName();
     }
 	
 	@GetMapping("/register")
@@ -45,26 +46,26 @@ public class AuthenticationController {
 		    /* The user is logged in :) */
 		    return "redirect:/home";
 		}
-		return "register";
+		return WebPage.REGISTER.getPageName();
     }
 	
 	@PostMapping("/register")
 	public String registerUser(@ModelAttribute("user") @Valid User saveUser, BindingResult bindingResult, Model model) {
 		
 		if(bindingResult.hasErrors()) {
-			return "register";
+			return WebPage.REGISTER.getPageName();
 		}
 
 		User user = userService.findByUsername(saveUser.getUsername()).orElse(null);
 		if(user != null) {
 			model.addAttribute("error", "exist_username");
-			return "register";
+			return WebPage.REGISTER.getPageName();
 		}
 		
 		user = userService.findByEmail(saveUser.getEmail()).orElse(null);
 		if(user != null) {
 			model.addAttribute("error", "exist_email");
-			return "register";
+			return WebPage.REGISTER.getPageName();
 		}
 
 		userService.addUser(saveUser);
@@ -75,7 +76,7 @@ public class AuthenticationController {
 	
 	@GetMapping("/access-denied")
     public String accessDenied() {
-		return "error/403";
+		return WebPage.ACCESS_DENIED.getPageName();
     }
 	
 

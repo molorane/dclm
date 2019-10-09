@@ -2,6 +2,7 @@ package com.blessy.application.controller;
 
 import com.blessy.application.service.IRoleService;
 import com.blessy.application.service.IUserService;
+import com.blessy.application.utils.WebPage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -21,6 +22,6 @@ public class HomeController {
 	@RequestMapping({"", "/", "/home"})
 	public String showHome() {
 
-		return "index";
+		return WebPage.HOME.getPageName();
 	}
 }

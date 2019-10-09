@@ -9,15 +9,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.ComponentScan;
 
 import java.util.List;
 import java.util.Optional;
 
 @SpringBootApplication
 public class Application implements CommandLineRunner {
-
-    @Autowired
-    private IContinentService continentService;
 
     private static final Logger logger = LoggerFactory.getLogger(Application.class);
 
@@ -27,10 +25,6 @@ public class Application implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        Optional<Continent> list = continentService.findById(1);
 
-        for (Country country:list.map(continent -> continent.getCountries()).get()) {
-            logger.info("   "+country.getId()+" "+country.getName());
-        }
     }
 }

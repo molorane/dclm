@@ -3,6 +3,7 @@ package com.blessy.application.controller;
 import com.blessy.application.model.User;
 import com.blessy.application.service.IDenominationService;
 import com.blessy.application.service.IUserService;
+import com.blessy.application.utils.WebPage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -30,7 +31,7 @@ public class ProfileController {
 		System.out.println("User ID: " + user.getUser_id());
 		model.addAttribute("user", user);
 		model.addAttribute("denomination", denominationService.getDenomination(1));
-		return "profile";
+		return WebPage.PROFILE.getPageName();
 	}
 
 }

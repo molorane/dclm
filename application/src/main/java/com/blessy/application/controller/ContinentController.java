@@ -3,6 +3,7 @@ package com.blessy.application.controller;
 
 import com.blessy.application.service.IContinentService;
 import com.blessy.application.service.ICountryService;
+import com.blessy.application.utils.WebPage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -23,7 +24,7 @@ public class ContinentController {
     @GetMapping("/continents")
     public String continents(Model model) {
         model.addAttribute("continents", continentService.findAll());
-        return "index";
+        return WebPage.CONTINENTS.getPageName();
     }
 
 }
