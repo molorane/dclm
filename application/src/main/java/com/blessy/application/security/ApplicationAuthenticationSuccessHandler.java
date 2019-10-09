@@ -1,4 +1,4 @@
-package com.blessy.application.config;
+package com.blessy.application.security;
 
 import com.blessy.application.model.CustomUserDetails;
 import com.blessy.application.model.User;

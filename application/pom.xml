@@ -9,10 +9,4 @@
   <name>application</name>
   <description>main application module</description>
 
-  <dependencies>
-    <dependency>
-      <groupId>com.blessy</groupId>
-      <artifactId>attendance</artifactId>
-    </dependency>
-  </dependencies>
 </project>

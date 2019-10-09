@@ -1,4 +1,4 @@
- package com.blessy.application.config;
+ package com.blessy.application.security;
 
  import com.blessy.application.service.internal.UserDetailsServiceImpl;
  import org.springframework.beans.factory.annotation.Autowired;
@@ -48,7 +48,7 @@
 
          // Page for admin
          .antMatchers("/admin/**")
-         .hasRole("ADMIN_USER")
+         .hasRole("ADMIN")
          .antMatchers("/private/account/*")
          .hasRole("ADMIN")
 

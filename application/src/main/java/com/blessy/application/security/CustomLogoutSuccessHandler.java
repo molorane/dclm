@@ -1,4 +1,4 @@
-package com.blessy.application.config;
+package com.blessy.application.security;
 
 import org.springframework.security.web.authentication.logout.LogoutSuccessHandler;
 import org.springframework.security.web.authentication.logout.SimpleUrlLogoutSuccessHandler;

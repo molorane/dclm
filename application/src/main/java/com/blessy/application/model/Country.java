@@ -9,7 +9,7 @@ import javax.validation.constraints.NotEmpty;
 @Entity
 @Getter
 @Setter
-public class Country implements Comparable<Country> {
+public class Country {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -23,8 +23,4 @@ public class Country implements Comparable<Country> {
     @JoinColumn(name="continent_id", nullable=false)
     private Continent continent;
 
-    @Override
-    public int compareTo(Country country) {
-        return this.getName().compareTo(country.getName());
-    }
 }
