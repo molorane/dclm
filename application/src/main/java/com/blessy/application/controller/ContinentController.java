@@ -11,7 +11,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
-@RequestMapping("/admin")
 public class ContinentController {
 
     private final IContinentService continentService;
@@ -21,10 +20,10 @@ public class ContinentController {
         this.continentService = continentService;
     }
 
-    @GetMapping("/continents")
-    public String continents(Model model) {
-        model.addAttribute("continents", continentService.findAll());
-        return WebPage.CONTINENTS.getPageName();
+    @GetMapping("/admin/continents")
+    public String continents(/*Model model*/) {
+        //model.addAttribute("continents", continentService.findAll());
+        return WebPage.HOME.getPageName();
     }
 
 }
