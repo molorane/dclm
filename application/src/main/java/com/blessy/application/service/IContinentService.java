@@ -11,5 +11,6 @@ public interface IContinentService {
 
     Continent addContinent(Continent continent);
     Optional<Continent> findByName(String name);
+    Optional<Continent> findById(Integer id);
     List<Continent> findAll();
 }

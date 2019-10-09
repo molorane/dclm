@@ -11,6 +11,7 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 import java.util.List;
+import java.util.Optional;
 
 @SpringBootApplication
 public class Application implements CommandLineRunner {
@@ -26,15 +27,10 @@ public class Application implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        List<Continent> list = continentService.findAll();
+        Optional<Continent> list = continentService.findById(1);
 
-        for (Continent continent:
-             list) {
-            logger.info(continent.getId()+" "+continent.getName());
-            for (Country country:
-                 continent.getCountries()) {
-                logger.info(country.getId()+" "+country.getName());
-            }
+        for (Country country:list.map(continent -> continent.getCountries()).get()) {
+            logger.info("   "+country.getId()+" "+country.getName());
         }
     }
 }

@@ -260,6 +260,7 @@
     </changeSet>
     
     <include file="/db/changelog/db.african.countries.xml" />
+	<include file="/db/changelog/db.asian.countries.xml" />
     
     <changeSet id="qualifications" author="${author}">
     

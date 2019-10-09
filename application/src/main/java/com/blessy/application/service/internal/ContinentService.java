@@ -30,6 +30,11 @@ public class ContinentService implements IContinentService {
     }
 
     @Override
+    public Optional<Continent> findById(Integer id) {
+        return continentRepository.findById(id);
+    }
+
+    @Override
     public List<Continent> findAll() {
         return continentRepository.findAll();
     }

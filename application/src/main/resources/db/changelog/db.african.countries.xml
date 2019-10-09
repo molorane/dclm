@@ -6,7 +6,7 @@
     http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
         
 
-       <changeSet id="countries" author="${author}">
+       <changeSet id="african-countries" author="${author}">
     	
     	<insert tableName="${countryTable}">
 			<column name="id" value="1" />
