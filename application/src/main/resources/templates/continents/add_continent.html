@@ -61,9 +61,9 @@
 					<strong>Error!</strong> Email already exists!!
 				</div>
 
-				<div th:if="${error == 'exist_email'}" class="alert alert-success">
+				<div th:if="${saved}" class="alert alert-success">
 					<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-					<strong>Error!</strong> Email already exists!!
+					<strong>Success!</strong> Continent saved
 				</div>
 
 				<div class="panel panel-primary">
@@ -87,11 +87,11 @@
 									<div class="tab-content">
 										<div class="tab-pane fade in active">
 
-											<form method="POST" th:action="@{/admin/continent/add}" th:object="${continent}">
+											<form method="POST" th:action="@{/admin/continents/add}" th:object="${continent}">
 												<div class="form-group">
 													<label for="name">Continent name</label>
 													<input type="text" id="name" class="form-control input-sm bounceIn animation-delay2"
-														   th:field="*{name}" placeholder="Enter name">
+														   th:field="*{name}" placeholder="Name here..">
 													<label th:if="${#fields.hasErrors('name')}"
 														   th:errors="*{name}" class="text-danger">Error
 														username</label>

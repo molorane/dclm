@@ -24,7 +24,7 @@ public class Application implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        System.out.println("qwertyuiop"+continentService);
+        /*System.out.println("qwertyuiop"+continentService);
         for (Continent continent:continentService.findAll()
              ) {
             logger.info(continent.getName());
@@ -33,6 +33,6 @@ public class Application implements CommandLineRunner {
                 logger.info("  "+country.getName());
             }
 
-        }
+        }*/
     }
 }

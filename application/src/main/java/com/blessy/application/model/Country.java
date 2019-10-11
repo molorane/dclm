@@ -5,6 +5,8 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Getter
@@ -22,5 +24,8 @@ public class Country {
     @ManyToOne
     @JoinColumn(name="continent_id", nullable=false)
     private Continent continent;
+
+    @OneToMany(mappedBy="country", fetch = FetchType.EAGER)
+    private List<State> states = new ArrayList<>();
 
 }

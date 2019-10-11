@@ -26,7 +26,7 @@ public class ContinentServiceImpl implements ContinentService {
     }
 
     @Override
-    public Optional<Continent> findById(Integer id) {
+    public Optional<Continent> findById(Long id) {
         return continentRepository.findById(id);
     }
 

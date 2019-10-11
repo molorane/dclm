@@ -20,12 +20,12 @@ public class Continent {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Long id;
 
     @NotEmpty(message = "Continent name required.")
     @Column(nullable = false, unique = true)
     private String name;
 
     @OneToMany(mappedBy="continent", fetch = FetchType.EAGER)
-    private List<Country> countries = new ArrayList<>();;
+    private Set<Country> countries = new HashSet<>();
 }

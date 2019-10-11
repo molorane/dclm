@@ -44,7 +44,7 @@
 				<ul class="breadcrumb">
 					<li><i class="fa fa-home"></i><a th:href="@{/home}"> Home</a></li>
 					<li class="active">Dashboard</li>
-					<li>Roles: [[${session.authenticated_user.roles}]]</li>
+					<li class="pull-right" th:text="${session.authenticated_user.roles}">Default</li>
 				</ul>
 			</div>
 			<!-- /breadcrumb-->

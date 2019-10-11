@@ -30,5 +30,8 @@ public class State {
     @Size(min = 2, max = 4, message = "State abv must have min 2 and max 4 characters.")
     private String sname;
 
+    @ManyToOne
+    @JoinColumn(name="country_id", nullable=false)
+    private Country country;
 
 }

@@ -8,14 +8,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.Optional;
 
 @Controller
-@RequestMapping("admin/continent")
+@RequestMapping("admin/continents")
 public class ContinentController {
 
     private final ContinentService continentService;
@@ -25,7 +24,7 @@ public class ContinentController {
         this.continentService = continentService;
     }
 
-    @RequestMapping("/all")
+    @RequestMapping({"/",""})
     public String continents(Model model) {
         model.addAttribute("continents", continentService.findAll());
         return WebPage.CONTINENTS.getPageName();
@@ -38,13 +37,24 @@ public class ContinentController {
     }
 
     @PostMapping("/add")
-    public String addPostContinent(@ModelAttribute("continent") @Valid Continent saveUser, BindingResult bindingResult, Model model) {
+    public String addPostContinent(@ModelAttribute("continent") @Valid Continent continent, BindingResult bindingResult, Model model) {
 
         if(bindingResult.hasErrors()) {
             return WebPage.ADD_CONTINENT.getPageName();
         }
 
+        continentService.addContinent(continent);
+
+        model.addAttribute("saved", true);
+
         return WebPage.ADD_CONTINENT.getPageName();
+    }
+
+    @RequestMapping("/{continent_id}")
+    public String countriesInContinent(@PathVariable("continent_id") Long continent_id, Model model) {
+        Continent continent = continentService.findById(continent_id).get();
+        model.addAttribute("continent", continent);
+        return WebPage.CONTINENT_COUNTRIES.getPageName();
     }
 
 }
