@@ -168,16 +168,9 @@ public class User implements Serializable{
 		this.userInfo = userInfo;
 	}
 
-	public boolean isAdmin(){
+	public boolean hasRole(String userRole){
 		return (roles.stream()
-				.filter(role -> "ADMIN".equals(role.getRole()))
-				.findAny()
-				.orElse(null) != null);
-	}
-
-	public boolean isAttendanceRegister(){
-		return (roles.stream()
-				.filter(role -> "ATTENDANCE_REGISTERER".equals(role.getRole()))
+				.filter(role -> userRole.equals(role.getRole()))
 				.findAny()
 				.orElse(null) != null);
 	}

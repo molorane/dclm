@@ -18,7 +18,8 @@ public enum WebPage {
      * ADMIN PAGES
      */
 
-    CONTINENTS("continents");
+    CONTINENTS("continents/continents"),
+    ADD_CONTINENT("continents/add_continent");
 
     @Getter
     private final String pageName;

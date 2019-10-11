@@ -2,12 +2,12 @@ package com.blessy.application.service.internal;
 
 import com.blessy.application.model.Role;
 import com.blessy.application.repository.RoleRepository;
-import com.blessy.application.service.IRoleService;
+import com.blessy.application.service.RoleService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class RoleService implements IRoleService {
+public class RoleServiceImpl implements RoleService {
 	
 	@Autowired
 	RoleRepository roleRepo;

@@ -2,7 +2,7 @@ package com.blessy.application.service.internal;
 
 import com.blessy.application.model.Country;
 import com.blessy.application.repository.CountryRepository;
-import com.blessy.application.service.ICountryService;
+import com.blessy.application.service.CountryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,12 +10,12 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
-public class CountryService implements ICountryService {
+public class CountryServiceImpl implements CountryService {
 
     private final CountryRepository countryRepository;
 
     @Autowired
-    public CountryService(CountryRepository countryRepository){
+    public CountryServiceImpl(CountryRepository countryRepository){
         this.countryRepository = countryRepository;
     }
 

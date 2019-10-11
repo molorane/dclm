@@ -5,10 +5,8 @@ import com.blessy.application.model.Role;
 import com.blessy.application.model.User;
 import com.blessy.application.repository.RoleRepository;
 import com.blessy.application.repository.UserRepository;
-import com.blessy.application.service.IUserService;
+import com.blessy.application.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.core.annotation.Order;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
@@ -19,7 +17,7 @@ import java.util.Optional;
 
 
 @Service
-public class UserService implements IUserService {
+public class UserServiceImpl implements UserService {
 	
 	 @Autowired
 	 private UserRepository userRepository;

@@ -9,7 +9,6 @@
 
 <body>
 
-	<a href="#" id="theme-setting-icon"><i class="fa fa-cog fa-lg"></i></a>
 	<div id="theme-setting">
 		<div class="title">
 			<strong class="no-margin">Skin Color</strong>
@@ -39,11 +38,18 @@
 
 		<div th:insert="fragments/topnav :: topnav"></div>
 
-		<div th:insert="fragments/asidenav :: asidenav (${session.authenticated_user.roles[0].toString()}) "></div>
-
 		<div id="main-container">
+
+			<div id="breadcrumb" class="breadcrumb-fixed">
+				<ul class="breadcrumb">
+					<li><i class="fa fa-home"></i><a th:href="@{/home}"> Home</a></li>
+					<li class="active">Dashboard</li>
+					<li>Roles: [[${session.authenticated_user.roles}]]</li>
+				</ul>
+			</div>
+			<!-- /breadcrumb-->
+
 			<div layout:fragment="content">
-			
 			</div>
 		</div>
 
@@ -53,10 +59,6 @@
 
 	<a href="" id="scroll-to-top" class="hidden-print"><i
 		class="fa fa-chevron-up"></i></a>
-		
-	
-		
-	
 
 	<!-- Logout confirmation -->
 	<div class="custom-popup width-100" id="logoutConfirm">
@@ -80,7 +82,7 @@
 	<!-- Placed at the end of the document so the pages load faster -->
 
 	<!-- Jquery -->
-	<script th:src="@{js/jquery/jquery-1.10.2.min.js}"></script>
+	<script th:src="@{/js/jquery/jquery-1.10.2.min.js}"></script>
 
 	<!-- Bootstrap -->
 	<script th:src="@{/js/bootstrap.js}"></script>
@@ -114,10 +116,9 @@
 	<!-- Endless -->
 	<script th:src="@{/js/endless/endless.js}"></script>
 
-	
-	<!-- Flot -->
-	<script th:src="@{/js/jquery/jquery.flot.min.js}"></script>
-	<script th:src="@{/js/endless/endless_dashboard.js}"></script>
+
+	<!-- Pace -->
+	<script th:src="@{/js/collapse.js}"></script>
 </body>
 
 </html>

@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <html xmlns:th="http://www.thymeleaf.org">
-
+<base href="/">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 <title>Home</title>
@@ -12,51 +12,27 @@
 
 <link rel="shortcut icon" type="text/css" th:href="@{img/index.png}" />
 <!-- Bootstrap core CSS -->
-<link th:href="@{css/bootstrap.min.css}" rel="stylesheet">
+<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" type="text/css" />
 
 <!-- Font Awesome -->
-<link th:href="@{css/font-awesome.min.css}" rel="stylesheet">
+<link th:href="@{/css/font-awesome.min.css}" rel="stylesheet" type="text/css" />
 
 <!-- Pace -->
-<link th:href="@{css/pace.css}" rel="stylesheet">
+<link th:href="@{/css/pace.css}" rel="stylesheet" type="text/css" />
 
 <!-- Color box -->
-<link th:href="@{css/colorbox.css}" rel="stylesheet">
+<link th:href="@{/css/colorbox.css}" rel="stylesheet"  type="text/css" />
 
 <!-- Morris -->
-<link th:href="@{css/morris.css}" rel="stylesheet">
+<link th:href="@{/css/morris.css}" rel="stylesheet"  type="text/css" />
 
 <!-- Endless -->
-<link th:href="@{css/endless.min.css}" rel="stylesheet">
-<link th:href="@{css/endless-skin.css}" rel="stylesheet">
+<link th:href="@{/css/endless.css}" rel="stylesheet"  type="text/css" />
+<link th:href="@{/css/endless-skin.css}" rel="stylesheet"  type="text/css" />
 
-<style type="text/css">
-.jqstooltip {
-	position: absolute;
-	left: 0px;
-	top: 0px;
-	visibility: hidden;
-	background: rgb(0, 0, 0) transparent;
-	background-color: rgba(0, 0, 0, 0.6);
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000,
-		endColorstr=#99000000);
-	-ms-filter:
-		"progid:DXImageTransform.Microsoft.gradient(startColorstr=#99000000, endColorstr=#99000000)";
-	color: white;
-	font: 10px arial, san serif;
-	text-align: left;
-	white-space: nowrap;
-	padding: 5px;
-	border: 1px solid white;
-	z-index: 10000;
-}
+<!-- Style -->
+<link th:href="@{/css/style.css}" rel="stylesheet"  type="text/css" />
 
-.jqsfield {
-	color: white;
-	font: 10px arial, san serif;
-	text-align: left;
-}
-</style>
 
 </head>
 

@@ -2,7 +2,7 @@ package com.blessy.application.security;
 
 import com.blessy.application.model.CustomUserDetails;
 import com.blessy.application.model.User;
-import com.blessy.application.service.IDenominationService;
+import com.blessy.application.service.DenominationService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.web.authentication.SavedRequestAwareAuthenticationSuccessHandler;
@@ -23,7 +23,7 @@ public class ApplicationAuthenticationSuccessHandler extends SavedRequestAwareAu
 
 
     @Autowired
-    IDenominationService denominationService;
+    DenominationService denominationService;
     
     @Override
     public void onAuthenticationSuccess(HttpServletRequest request, HttpServletResponse response, Authentication

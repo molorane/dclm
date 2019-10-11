@@ -5,7 +5,7 @@ import com.blessy.application.model.Country;
 import java.util.List;
 import java.util.Optional;
 
-public interface ICountryService {
+public interface CountryService {
 
     Country addCountry(Country continent);
     Optional<Country> findByName(String name);

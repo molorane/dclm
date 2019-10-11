@@ -1,6 +1,7 @@
 package com.blessy.application.model;
 
 
+import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 import org.springframework.data.jpa.repository.Query;
@@ -14,15 +15,14 @@ import java.util.Set;
 
 @Entity
 @Table(name = "continent")
-@Getter
-@Setter
+@Data
 public class Continent {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    @NotEmpty(message = "Continent required.")
+    @NotEmpty(message = "Continent name required.")
     @Column(nullable = false, unique = true)
     private String name;
 

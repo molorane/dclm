@@ -3,7 +3,7 @@ package com.blessy.application.service;
 
 import com.blessy.application.model.Denomination;
 
-public interface IDenominationService {
+public interface DenominationService {
 	
 	Denomination getDenomination(Integer id);
 

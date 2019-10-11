@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Optional;
 
 
-public interface IContinentService {
+public interface ContinentService {
 
     Continent addContinent(Continent continent);
     Optional<Continent> findByName(String name);

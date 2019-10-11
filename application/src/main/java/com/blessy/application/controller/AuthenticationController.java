@@ -1,9 +1,9 @@
 package com.blessy.application.controller;
 
 import com.blessy.application.model.User;
-import com.blessy.application.service.IUserService;
+import com.blessy.application.service.UserService;
 import com.blessy.application.utils.WebPage;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AnonymousAuthenticationToken;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.context.SecurityContextHolder;
@@ -17,16 +17,11 @@ import org.springframework.web.bind.annotation.PostMapping;
 import javax.validation.Valid;
 
 @Controller
+@RequiredArgsConstructor
 public class AuthenticationController {
 
-	private final IUserService userService;
+	private final UserService userService;
 
-	@Autowired
-	public AuthenticationController(IUserService userService){
-		this.userService = userService;
-	}
-	
-	
 	@GetMapping({"/login","/"})
     public String login() {
 		Authentication auth = SecurityContextHolder.getContext().getAuthentication();

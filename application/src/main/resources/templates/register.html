@@ -23,8 +23,8 @@
 				</div>
 
 				<div th:if="${error == 'exist_email'}" class="alert alert-danger">
-					<a href="#" class="close" data-dismiss="alert">&times;</a> <strong>Error!</strong>
-					Email already exists!!
+					<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+					<strong>Error!</strong> Email already exists!!
 				</div>
 
 				<form class="form-login" method="POST" th:action="@{/register}"

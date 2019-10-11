@@ -261,6 +261,10 @@
     
     <include file="/db/changelog/db.african.countries.xml" />
 	<include file="/db/changelog/db.asian.countries.xml" />
+	<include file="/db/changelog/db.europian.countries.xml" />
+	<include file="/db/changelog/db.south-america.countries.xml" />
+	<include file="/db/changelog/db.north-america.countries.xml" />
+	<include file="/db/changelog/db.australian.countries.xml" />
     
     <changeSet id="qualifications" author="${author}">
     

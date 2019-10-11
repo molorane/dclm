@@ -74,7 +74,7 @@
          .logout().logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
          .logoutSuccessUrl("/login?logout=true")
          .deleteCookies("JSESSIONID")
-         .and()
+         .and().csrf().disable()
          .sessionManagement()
          .maximumSessions(1);
      }
@@ -95,7 +95,7 @@
 
      @Override
      public void configure(WebSecurity web) throws Exception {
-         web.ignoring().antMatchers("/resources/static/**");
+         web.ignoring().antMatchers("/resources/**");
      }
 
 

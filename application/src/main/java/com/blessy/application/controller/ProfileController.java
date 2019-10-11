@@ -1,8 +1,8 @@
 package com.blessy.application.controller;
 
 import com.blessy.application.model.User;
-import com.blessy.application.service.IDenominationService;
-import com.blessy.application.service.IUserService;
+import com.blessy.application.service.DenominationService;
+import com.blessy.application.service.UserService;
 import com.blessy.application.utils.WebPage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -14,11 +14,11 @@ import java.security.Principal;
 @Controller
 public class ProfileController {
 
-	private final IUserService userService;
-	private final IDenominationService denominationService;
+	private final UserService userService;
+	private final DenominationService denominationService;
 
 	@Autowired
-	public ProfileController(IUserService userService, IDenominationService denominationService){
+	public ProfileController(UserService userService, DenominationService denominationService){
 		this.userService = userService;
 		this.denominationService = denominationService;
 	}
