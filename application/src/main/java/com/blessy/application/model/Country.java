@@ -25,7 +25,7 @@ public class Country {
     @JoinColumn(name="continent_id", nullable=false)
     private Continent continent;
 
-    @OneToMany(mappedBy="country", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy="country", fetch = FetchType.LAZY)
     private List<State> states = new ArrayList<>();
 
 }

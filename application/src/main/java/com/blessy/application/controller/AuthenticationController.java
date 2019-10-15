@@ -67,8 +67,7 @@ public class AuthenticationController {
 		
 		return "redirect:/login";
 	}
-	
-	
+
 	@GetMapping("/access-denied")
     public String accessDenied() {
 		return WebPage.ACCESS_DENIED.getPageName();

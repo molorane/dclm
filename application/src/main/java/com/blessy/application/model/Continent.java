@@ -26,6 +26,6 @@ public class Continent {
     @Column(nullable = false, unique = true)
     private String name;
 
-    @OneToMany(mappedBy="continent", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy="continent", fetch = FetchType.LAZY)
     private Set<Country> countries = new HashSet<>();
 }

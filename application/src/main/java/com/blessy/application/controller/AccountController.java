@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-public class AccoutController {
+public class AccountController {
 	
 	
 	@RequestMapping(value = "public/account/{accountNumber}")
