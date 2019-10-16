@@ -72,6 +72,9 @@
 					<li class="pull-right" th:text="${session.authenticated_user.roles}">Default</li>
 				</ul>
 			</div>
+
+
+			<div th:replace="fragments/breadcrumb :: breadcrumb(${ {'admin', 'continents', 'countries'} })"></div>
 			<!-- /breadcrumb-->
 
 			<div layout:fragment="content">
