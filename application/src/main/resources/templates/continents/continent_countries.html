@@ -3,7 +3,7 @@
 	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
 	  layout:decorate="~{layouts/main-layout}">
 <head>
-	<title>Home 1</title>
+	<title>[[${continent.name.toUpperCase()}]] - Countries</title>
 </head>
 
 <body>
@@ -61,7 +61,7 @@
 							<span class="clickable"><i class="fa fa-wrench"></i></span>
 							<span class="clickable"> <i class="fa fa-chevron-down"></i> </span>
 						</div>
-						<h4 class="panel-title">Continent:[[${continent.name}]]</h4>
+						<h4 class="panel-title">[[${continent.name.toUpperCase()}]]</h4>
 					</div>
 					<div class="panel-body">
 						<div class="panel panel-default">

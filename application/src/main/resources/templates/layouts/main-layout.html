@@ -3,8 +3,34 @@
 <html xmlns:th="http://www.thymeleaf.org"
 	xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout">
 
-<head th:replace="fragments/header :: head">
- <title layout:title-pattern="$LAYOUT_TITLE - $CONTENT_TITLE">Task List</title>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="keywords" content="Home" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
+	<link rel="shortcut icon" type="text/css" th:href="@{img/index.png}" />
+	<!-- Bootstrap core CSS -->
+	<link th:href="@{/css/bootstrap.min.css}" rel="stylesheet" type="text/css" />
+
+	<!-- Font Awesome -->
+	<link th:href="@{/css/font-awesome.min.css}" rel="stylesheet" type="text/css" />
+
+	<!-- Pace -->
+	<link th:href="@{/css/pace.css}" rel="stylesheet" type="text/css" />
+
+	<!-- Color box -->
+	<link th:href="@{/css/colorbox.css}" rel="stylesheet"  type="text/css" />
+
+	<!-- Morris -->
+	<link th:href="@{/css/morris.css}" rel="stylesheet"  type="text/css" />
+
+	<!-- Endless -->
+	<link th:href="@{/css/endless.css}" rel="stylesheet"  type="text/css" />
+	<link th:href="@{/css/endless-skin.css}" rel="stylesheet"  type="text/css" />
+
+	<!-- Style -->
+	<link th:href="@{/css/style.css}" rel="stylesheet"  type="text/css" />
+ 	<title layout:title-pattern="$LAYOUT_TITLE - $CONTENT_TITLE">DCLM</title>
 </head>
 
 <body>
