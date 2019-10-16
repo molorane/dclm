@@ -4,7 +4,7 @@
 	  layout:decorate="~{layouts/main-layout}">
 
 <head>
-	<title>Home Page</title>
+	<title>Home</title>
 </head>
 
 <body>
@@ -123,7 +123,7 @@
 								<div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
 									<a href="index.php#" class="shortcut-link">
 											<span class="shortcut-icon">
-												<img th:src="@{/img/images/32x32/enterprise.png}" />
+												<img th:src="@{/img/images/32x32/church.png}" />
 											</span>
 										<span class="text">Churches</span>
 									</a>
@@ -169,6 +169,24 @@
 												<img th:src="@{/img/images/32x32/social.png}" />
 											</span>
 										<span class="text">Countries</span>
+									</a>
+								</div>
+
+								<div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
+									<a th:href="@{/admin/stmc}" class="shortcut-link">
+											<span class="shortcut-icon">
+												<img th:src="@{/img/images/32x32/glossary.png}" />
+											</span>
+										<span class="text">STMC</span>
+									</a>
+								</div>
+
+								<div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
+									<a th:href="@{/admin/stmc}" class="shortcut-link">
+											<span class="shortcut-icon">
+												<img th:src="@{/img/images/32x32/flower.png}" />
+											</span>
+										<span class="text">Weddings</span>
 									</a>
 								</div>
 							</div>

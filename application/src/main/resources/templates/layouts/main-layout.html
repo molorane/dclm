@@ -30,7 +30,7 @@
 
 	<!-- Style -->
 	<link th:href="@{/css/style.css}" rel="stylesheet"  type="text/css" />
- 	<title layout:title-pattern="$LAYOUT_TITLE - $CONTENT_TITLE">DCLM</title>
+ 	<title layout:title-pattern="$CONTENT_TITLE - $LAYOUT_TITLE">dclm</title>
 </head>
 
 <body>
@@ -69,7 +69,6 @@
 			<div id="breadcrumb" class="breadcrumb-fixed">
 				<ul class="breadcrumb">
 					<li><i class="fa fa-home"></i><a th:href="@{/home}"> Home</a></li>
-					<li class="active">Dashboard</li>
 					<li class="pull-right" th:text="${session.authenticated_user.roles}">Default</li>
 				</ul>
 			</div>
