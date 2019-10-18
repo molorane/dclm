@@ -4,7 +4,7 @@
 	  layout:decorate="~{layouts/main-layout}">
 
 <head>
-	<title>New Continent</title>
+	<title>New Country</title>
 </head>
 
 <body>
@@ -26,12 +26,12 @@
 
 				<div th:if="${error == 'exist_email'}" class="alert alert-danger">
 					<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-					<strong>Error!</strong> Email already exists!!
+					<strong>Error!</strong> Country already exists!!
 				</div>
 
 				<div th:if="${saved}" class="alert alert-success">
 					<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-					<strong>Success!</strong> Continent saved
+					<strong>Success!</strong> Country saved
 				</div>
 
 				<div class="panel panel-primary">
@@ -41,28 +41,27 @@
 							<span class="clickable"><i class="fa fa-wrench"></i></span>
 							<span class="clickable"> <i class="fa fa-chevron-down"></i> </span>
 						</div>
-						<h4 class="panel-title">New continent</h4>
+						<h4 class="panel-title">New country</h4>
 					</div>
 					<div class="panel-body">
 						<div class="panel panel-default">
 							<div class="panel-tab clearfix">
 								<ul class="tab-bar">
-									<li class="active"><a href="#" data-toggle="tab"><i class="fa fa-plus"></i> Continent Setting</a></li>
+									<li class="active"><a href="#" data-toggle="tab"><i class="fa fa-plus"></i> Country [[${country.continent.name.toUpperCase()}]]</a></li>
 								</ul>
 							</div>
 							<div class="panel-body">
 								<div class="tab-content">
 									<div class="tab-pane fade in active">
-										<form method="POST" th:action="@{/admin/continents/addContinent}" th:object="${continent}">
+										<form method="POST" th:action="@{|/admin/continents/addCountry/${country.continent.id}|}" th:object="${country}">
 											<div class="form-group">
-												<label for="name">Continent name</label>
+												<label for="name">Country name</label>
 												<input type="text" id="name" class="form-control input-sm bounceIn animation-delay2"
 													   th:field="*{name}" placeholder="Name here..">
 												<label th:if="${#fields.hasErrors('name')}"
-													   th:errors="*{name}" class="text-danger">Error
-													name</label>
+													   th:errors="*{name}" class="text-danger">Error name</label>
 											</div><!-- /form-group -->
-											<button type="submit" class="btn btn-success btn-sm">Save</button>
+											<button type="submit" class="btn btn-success btn-sm">Add</button>
 										</form>
 									</div>
 								</div>

@@ -20,33 +20,6 @@
 	</div>
 	<!-- /main-header -->
 
-	<div class="grey-container shortcut-wrapper">
-		<a href="index.php#" class="shortcut-link">
-					<span class="shortcut-icon">
-						<img th:src="@{/img/images/32x32/reports.png}" />
-					</span>
-			<span class="text">Statistic</span>
-		</a>
-		<a href="index.php#" class="shortcut-link">
-					<span class="shortcut-icon">
-						<img th:src="@{/img/images/32x32/certificate.png}" />
-					</span>
-			<span class="text">Qualifications</span>
-		</a>
-		<a href="index.php#" class="shortcut-link">
-					<span class="shortcut-icon">
-						<img th:src="@{/img/images/32x32/profile.png}" />
-					</span>
-			<span class="text">Profile</span>
-		</a>
-		<a href="index.php#" class="shortcut-link">
-					<span class="shortcut-icon">
-						<img th:src="@{/img/images/32x32/lock.png}" />
-					</span>
-			<span class="text">Password</span>
-		</a>
-	</div><!-- /grey-container -->
-
 	<div class="grey-container" th:if="${session.authenticated_user.hasRole('ATTENDANCE_REGISTERER')}">
 		<a th:href="@{attendance_keeper}" class="btn btn-danger quick-btn"><i class="fa fa-table"></i><span>Attendance</span></a>
 	</div>
@@ -67,7 +40,7 @@
 					<div class="panel-body">
 						<div class="panel panel-default">
 							<div class="panel-body">
-								<a th:href="@{/admin/continents/add}"><img th:src="@{/img/images/16x16/add-16x16.png}" />  New Continent </a>
+								<a th:href="@{/admin/continents/addContinent}"><img th:src="@{/img/images/16x16/add-16x16.png}" />  New Continent </a>
 								<span class="badge badge-success m-left-xs" th:text="${continents.size()}">0</span>
 							</div>
 							<table class="table table-bordered table-condensed table-hover table-striped">
@@ -88,7 +61,7 @@
 									<td>
 										<a th:href="@{|/admin/continents/${continent.id}|}"><img th:src="@{/img/images/24x24/view.png}" /></a>
 										<a th:href="@{|/admin/continents/${continent.id}|}"><img th:src="@{/img/images/24x24/edit.png}" /></a>
-										<a th:href="@{|/admin/continents/${continent.id}|}"><img th:src="@{/img/images/16x16/error_delete.png}" /></a>
+										<a th:href="@{|/admin/continents/${continent.id}|}"><img th:src="@{/img/images/24x24/delete.png}" /></a>
 									</td>
 								</tr>
 

@@ -1,7 +1,6 @@
 package com.blessy.application.model;
 
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
@@ -9,15 +8,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Getter
-@Setter
+@Data
 public class Country {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @NotEmpty(message = "city required.")
+    @NotEmpty(message = "country required.")
     @Column(nullable = false, unique = true)
     private String name;
 

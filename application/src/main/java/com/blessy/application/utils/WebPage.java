@@ -20,6 +20,7 @@ public enum WebPage {
 
     CONTINENTS("continents/continents"),
     CONTINENT_COUNTRIES("continents/continent_countries"),
+    ADD_CONTINENT_COUNTRY("continents/add_country"),
     ADD_CONTINENT("continents/add_continent");
 
     @Getter
