@@ -8,14 +8,14 @@ import org.springframework.data.jpa.repository.Query;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
-import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
+
+@Data
 @Entity
 @Table(name = "continent")
-@Data
 public class Continent {
 
     @Id
@@ -27,5 +27,5 @@ public class Continent {
     private String name;
 
     @OneToMany(mappedBy="continent", fetch = FetchType.LAZY)
-    private Set<Country> countries = new HashSet<>();
+    private Collection<Country> countries = new HashSet<>();
 }

@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import java.security.Principal;
 
 @Controller
+@RequestMapping("/profile")
 public class ProfileController {
 
 	private final UserService userService;
@@ -32,6 +33,13 @@ public class ProfileController {
 		model.addAttribute("user", user);
 		model.addAttribute("denomination", denominationService.getDenomination(1));
 		return WebPage.PROFILE.getPageName();
+	}
+
+	@RequestMapping("/change_password")
+	public String profile() {
+
+		return WebPage.CHANGE_PASSWORD.getPageName();
+
 	}
 
 }

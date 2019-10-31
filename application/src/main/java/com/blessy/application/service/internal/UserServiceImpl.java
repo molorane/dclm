@@ -7,9 +7,11 @@ import com.blessy.application.repository.RoleRepository;
 import com.blessy.application.repository.UserRepository;
 import com.blessy.application.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
@@ -17,6 +19,7 @@ import java.util.Optional;
 
 
 @Service
+@Transactional
 public class UserServiceImpl implements UserService {
 	
 	 @Autowired
@@ -53,6 +56,12 @@ public class UserServiceImpl implements UserService {
 	public List<User> findAll() {
 		// TODO Auto-generated method stub
 		return userRepository.findAll();
+	}
+
+	@Override
+	public User getCurrentUser() {
+		User user = (User) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+		return userRepository.findByUsername(user.getUsername()).get();
 	}
 
 }

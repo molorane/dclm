@@ -29,4 +29,8 @@ public class City {
     @Column(nullable = false, unique = true)
     @Size(min = 2, max = 4, message = "City abv must have min 2 and max 4 characters.")
     private String sname;
+
+    @ManyToOne
+    @JoinColumn(name="state_id", nullable=false)
+    private State state;
 }

@@ -7,6 +7,8 @@ import lombok.Setter;
 import javax.persistence.*;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name = "state")
@@ -29,5 +31,8 @@ public class State {
     @ManyToOne
     @JoinColumn(name="country_id", nullable=false)
     private Country country;
+
+    @OneToMany(mappedBy="state", fetch = FetchType.LAZY)
+    private List<City> cities = new ArrayList<>();
 
 }

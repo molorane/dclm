@@ -3,7 +3,7 @@
 	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
 	  layout:decorate="~{layouts/main-layout}">
 <head>
-	<title>[[${continent.name.toUpperCase()}]]</title>
+	<title>[[${country.name.toUpperCase()}]]</title>
 </head>
 
 <body>
@@ -29,33 +29,34 @@
 							<span class="clickable"><i class="fa fa-wrench"></i></span>
 							<span class="clickable"> <i class="fa fa-chevron-down"></i> </span>
 						</div>
-						<h4 class="panel-title">[[${continent.name.toUpperCase()}]]</h4>
+						<h4 class="panel-title">[[${country.name.toUpperCase()}]]</h4>
 					</div>
 					<div class="panel-body">
 						<div class="panel panel-default">
 							<div class="panel-body">
-								<a th:href="@{|/admin/continents/addCountry/${continent.id}|}"><img th:src="@{/img/images/16x16/add-16x16.png}" />  New Country </a>
-								<span class="badge badge-success m-left-xs" th:text="${continent.countries.size()}">0</span>
+								<a th:href="@{|/admin/state/addState/${country.id}|}">
+									<img th:src="@{/img/images/16x16/add-16x16.png}" />  New State
+								</a>
+								<span class="badge badge-success m-left-xs" th:text="${country.states.size()}">0</span>
 							</div>
 							<table class="table table-bordered table-condensed table-hover table-striped">
 								<thead>
 								<tr>
 									<th>ID</th>
 									<th>Name</th>
-									<th>No States</th>
+									<th>No Cities</th>
 									<th>Operaions</th>
 								</tr>
 								</thead>
 								<tbody>
-
-								<tr th:each="country : ${continent.countries}">
-									<td th:text="${country.id}">Graduate 001</td>
-									<td th:text="${country.name}">Graduate 001</td>
-									<td th:text="${country.states.size()}">Graduate 001</td>
+								<tr th:each="state : ${country.states}">
+									<td th:text="${state.id}">Graduate 001</td>
+									<td th:text="${state.name}">Graduate 001</td>
+									<td th:text="${state.cities.size()}">Graduate 001</td>
 									<td>
-										<a th:href="@{|/admin/continents/${country.id}|}"><img th:src="@{/img/images/24x24/view.png}" /></a>
-										<a th:href="@{|/admin/continents/${country.id}|}"><img th:src="@{/img/images/24x24/edit.png}" /></a>
-										<a th:href="@{|/admin/continents/${country.id}|}"><img th:src="@{/img/images/24x24/delete.png}" /></a>
+										<a th:href="@{|/admin/continent/continents/${country.continent.id}/${country.id}/${state.id}/|}"><img th:src="@{/img/images/24x24/view.png}" /></a>
+										<a th:href="@{|/admin/continent/continents/${country.continent.id}/${country.id}/${state.id}/|}"><img th:src="@{/img/images/24x24/edit.png}" /></a>
+										<a th:href="@{|/admin/continent/continents/${country.continent.id}/${country.id}/${state.id}/|}"><img th:src="@{/img/images/24x24/delete.png}" /></a>
 									</td>
 								</tr>
 

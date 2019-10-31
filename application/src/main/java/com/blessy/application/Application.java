@@ -1,7 +1,5 @@
 package com.blessy.application;
 
-import com.blessy.application.model.Continent;
-import com.blessy.application.model.Country;
 import com.blessy.application.service.ContinentService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

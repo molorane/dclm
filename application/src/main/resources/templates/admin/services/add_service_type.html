@@ -4,7 +4,7 @@
 	  layout:decorate="~{layouts/main-layout}">
 
 <head>
-	<title>New Continent</title>
+	<title>New Service</title>
 </head>
 
 <body>
@@ -30,8 +30,8 @@
 				</div>
 
 				<div th:if="${saved}" class="alert alert-success">
-					<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-					<strong>Success!</strong> Continent saved
+					<button type="button" class="close" data-dismiss="alert" aria-hidden="true"><img th:src="@{/img/images/16x16/error_delete.png}" /></button>
+					<img th:src="@{/img/images/16x16/success.png}" /> <strong>Success!</strong> service saved.
 				</div>
 
 				<div class="panel panel-primary">
@@ -41,28 +41,37 @@
 							<span class="clickable"><i class="fa fa-wrench"></i></span>
 							<span class="clickable"> <i class="fa fa-chevron-down"></i> </span>
 						</div>
-						<h4 class="panel-title">New continent</h4>
+						<h4 class="panel-title">New Service</h4>
 					</div>
 					<div class="panel-body">
 						<div class="panel panel-default">
 							<div class="panel-tab clearfix">
 								<ul class="tab-bar">
-									<li class="active"><a href="#" data-toggle="tab"><i class="fa fa-plus"></i> Continent Setting</a></li>
+									<li class="active"><a href="#" data-toggle="tab"><i class="fa fa-plus"></i> Service Setting</a></li>
 								</ul>
 							</div>
 							<div class="panel-body">
 								<div class="tab-content">
 									<div class="tab-pane fade in active">
-										<form method="POST" th:action="@{/admin/continents/addContinent}" th:object="${continent}">
+										<form method="POST" th:action="@{/admin/services/addService}" th:object="${service_type}">
 											<div class="form-group">
-												<label for="name">Continent name</label>
+												<label for="name">Service name</label>
 												<input type="text" id="name" class="form-control input-sm bounceIn animation-delay2"
 													   th:field="*{name}" placeholder="Name here..">
 												<label th:if="${#fields.hasErrors('name')}"
-													   th:errors="*{name}" class="text-danger">Error
-													name</label>
+													   th:errors="*{name}" class="text-danger">Error name</label>
 											</div><!-- /form-group -->
-											<button type="submit" class="btn btn-success btn-sm">Save</button>
+											<div class="form-group">
+												<label for="name">Service Abbreviation <span class=""></span></label>
+												<a th:href="@{#}" data-container="body" data-toggle="popover" data-placement="top" data-content="Short name for service type. Not more than three characters" data-original-title="" title="">
+													<img th:src="@{/img/images/16x16/info.png}" />
+												</a>
+												<input type="text" id="abv" class="form-control input-sm bounceIn animation-delay2"
+													   th:field="*{abv}" placeholder="abbreviation here..">
+												<label th:if="${#fields.hasErrors('name')}"
+													   th:errors="*{abv}" class="text-danger">Error name</label>
+											</div><!-- /form-group -->
+											<button type="submit" class="btn btn-submit-endless btn-sm">Save</button>
 										</form>
 									</div>
 								</div>

@@ -16,7 +16,7 @@
 
  @Configuration
  @EnableWebSecurity
- public class SecurityConfig extends WebSecurityConfigurerAdapter {
+ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
 
      @Autowired
      private UserDetailsServiceImpl userDetailsService;
@@ -86,7 +86,7 @@
      }
 
      @Autowired
-     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
+     public void configure(AuthenticationManagerBuilder auth) throws Exception {
          auth.userDetailsService(userDetailsService).passwordEncoder(passwordEncoder());
      }
 

@@ -12,5 +12,6 @@ public interface UserService {
 	Optional<User> findByUsername(String username);
 	Optional<User> findByEmail(String email);	
 	List<User> findAll();
+	User getCurrentUser();
 	 
 }

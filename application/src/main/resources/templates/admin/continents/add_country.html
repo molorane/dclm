@@ -30,8 +30,8 @@
 				</div>
 
 				<div th:if="${saved}" class="alert alert-success">
-					<button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
-					<strong>Success!</strong> Country saved
+					<button type="button" class="close" data-dismiss="alert" aria-hidden="true"><img th:src="@{/img/images/16x16/error_delete.png}" /></button>
+					<img th:src="@{/img/images/16x16/success.png}" /> <strong>Success!</strong> country saved
 				</div>
 
 				<div class="panel panel-primary">
@@ -53,7 +53,7 @@
 							<div class="panel-body">
 								<div class="tab-content">
 									<div class="tab-pane fade in active">
-										<form method="POST" th:action="@{|/admin/continents/addCountry/${country.continent.id}|}" th:object="${country}">
+										<form method="POST" th:action="@{|/admin/continent/addCountry/${country.continent.id}|}" th:object="${country}">
 											<div class="form-group">
 												<label for="name">Country name</label>
 												<input type="text" id="name" class="form-control input-sm bounceIn animation-delay2"
@@ -61,7 +61,7 @@
 												<label th:if="${#fields.hasErrors('name')}"
 													   th:errors="*{name}" class="text-danger">Error name</label>
 											</div><!-- /form-group -->
-											<button type="submit" class="btn btn-success btn-sm">Add</button>
+											<button type="submit" class="btn btn-submit-endless btn-sm">Add</button>
 										</form>
 									</div>
 								</div>

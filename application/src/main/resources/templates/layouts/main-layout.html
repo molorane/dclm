@@ -4,6 +4,7 @@
 	xmlns:layout="http://www.ultraq.net.nz/web/thymeleaf/layout">
 
 <head>
+	<title layout:title-pattern="$CONTENT_TITLE - $LAYOUT_TITLE">dclm</title>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 	<meta name="keywords" content="Home" />
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -18,6 +19,24 @@
 	<!-- Pace -->
 	<link th:href="@{/css/pace.css}" rel="stylesheet" type="text/css" />
 
+	<!-- Chosen -->
+	<link th:href="@{/css/chosen.min.css}" rel="stylesheet">
+
+	<!-- Datepicker -->
+	<link th:href="@{/css/datepicker.css}" rel="stylesheet" type="text/css" />
+
+	<!-- Timepicker -->
+	<link th:href="@{/css/bootstrap-timepicker.css}" rel="stylesheet">
+
+	<!-- Slider -->
+	<link th:href="@{/css/slider.css}" rel="stylesheet">
+
+	<!-- Tag input -->
+	<link th:href="@{/css/jquery.tagsinput.css}" rel="stylesheet">
+
+	<!-- WYSIHTML5 -->
+	<link th:href="@{/css/bootstrap-wysihtml5.css}" rel="stylesheet">
+
 	<!-- Color box -->
 	<link th:href="@{/css/colorbox.css}" rel="stylesheet"  type="text/css" />
 
@@ -30,7 +49,6 @@
 
 	<!-- Style -->
 	<link th:href="@{/css/style.css}" rel="stylesheet"  type="text/css" />
- 	<title layout:title-pattern="$CONTENT_TITLE - $LAYOUT_TITLE">dclm</title>
 </head>
 
 <body>
@@ -115,6 +133,30 @@
 	<!-- Bootstrap -->
 	<script th:src="@{/js/bootstrap.js}"></script>
 
+	<!-- Parsley -->
+	<script th:src="@{/js/parsley.min.js}"></script>
+
+	<!-- Chosen -->
+	<script th:src="@{/js/chosen.jquery.min.js}"></script>
+
+	<!-- Mask-input -->
+	<script th:src="@{/js/jquery.maskedinput.min.js}"></script>
+
+	<!-- Datepicker -->
+	<script th:src="@{/js/bootstrap-datepicker.min.js}"></script>
+
+	<!-- Timepicker -->
+	<script th:src="@{/js/bootstrap-timepicker.min.js}"></script>
+
+	<!-- Slider -->
+	<script th:src="@{/js/bootstrap-slider.min.js}"></script>
+
+	<!-- Tag input -->
+	<script th:src="@{/js/jquery.tagsinput.min.js}"></script>
+
+	<!-- WYSIHTML5 -->
+	<script th:src="@{/js/wysihtml5-0.3.0.min.js}"></script>
+	<script th:src="@{/js/bootstrap-wysihtml5.js}"></script>
 
 	<!-- Morris -->
 	<script th:src="@{/js/rapheal.min.js}"></script>
@@ -142,6 +184,7 @@
 	<script th:src="@{/js/jquery/jquery.cookie.min.js}"></script>
 
 	<!-- Endless -->
+	<script th:src="@{/js/endless/endless_form.js}"></script>
 	<script th:src="@{/js/endless/endless.js}"></script>
 
 

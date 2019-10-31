@@ -20,30 +20,38 @@
 	</div>
 	<!-- /main-header -->
 
+    <div class="alert-animated">
+        <div class="alert-inner">
+            <div class="alert-message">
+                Welcome to <strong>[[${session.denomination.name}]]</strong>. No new announcement.
+            </div>
+        </div>
+    </div>
+
 	<div class="grey-container shortcut-wrapper">
 		<a href="#" class="shortcut-link">
 					<span class="shortcut-icon">
-						<img th:src="@{/img/images/32x32/reports.png}" />
+						<img th:src="@{/img/images/32x32/skill_gap.png}" />
 					</span>
-			<span class="text">Statistic</span>
+			<span class="text">My Contacts</span>
 		</a>
 		<a href="#" class="shortcut-link">
 					<span class="shortcut-icon">
-						<img th:src="@{/img/images/32x32/certificate.png}" />
+						<img th:src="@{/img/images/32x32/graduation.png}" />
 					</span>
-			<span class="text">Qualifications</span>
+			<span class="text">Education</span>
 		</a>
 		<a href="#" class="shortcut-link">
 					<span class="shortcut-icon">
 						<img th:src="@{/img/images/32x32/profile.png}" />
 					</span>
-			<span class="text">Profile</span>
+			<span class="text">Personal Info</span>
 		</a>
-		<a href="#" class="shortcut-link">
+		<a th:href="@{/profile/change_password}" class="shortcut-link">
 					<span class="shortcut-icon">
 						<img th:src="@{/img/images/32x32/lock.png}" />
 					</span>
-			<span class="text">Password</span>
+			<span class="text">Change Password</span>
 		</a>
 	</div><!-- /grey-container -->
 
@@ -109,7 +117,7 @@
                                     </a>
                                 </div>
                                 <div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
-                                    <a href="#" class="shortcut-link">
+                                    <a th:href="@{/admin/denomination/about}" class="shortcut-link">
 											<span class="shortcut-icon">
 												<img th:src="@{/img/images/32x32/information1.png}" />
 											</span>
@@ -120,7 +128,7 @@
 							<div class="row">
 
 								<div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
-									<a th:href="@{/admin/stmc}" class="shortcut-link">
+									<a th:href="@{/admin/services}" class="shortcut-link">
 											<span class="shortcut-icon">
 												<img th:src="@{/img/images/32x32/services.png}" />
 											</span>
@@ -163,7 +171,7 @@
 								<div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
 									<a href="#" class="shortcut-link">
 											<span class="shortcut-icon">
-												<img th:src="@{/img/images/32x32/graduation.png}" />
+												<img th:src="@{/img/images/32x32/books.png}" />
 											</span>
 										<span class="text">Campuses</span>
 									</a>
@@ -172,11 +180,11 @@
 							<div class="row">
 
 								<div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
-									<a th:href="@{/admin/stmc}" class="shortcut-link">
+									<a th:href="@{/admin/qualifications}" class="shortcut-link">
 											<span class="shortcut-icon">
-												<img th:src="@{/img/images/32x32/bible.png}" />
+												<img th:src="@{/img/images/32x32/certificate.png}" />
 											</span>
-										<span class="text">Services</span>
+										<span class="text">Qualifications</span>
 									</a>
 								</div>
 								<div class="col-lg-2 col-md-2 col-sm-2 col-xs-6">
