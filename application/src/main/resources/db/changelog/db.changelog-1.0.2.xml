@@ -70,7 +70,7 @@
     		<column name="user_id" value="2014098617" />
     		<column name="username" value="fedora" />
     		<column name="email" value="fedora@plugit.co.za" />
-    		<column name="password" value="$2a$10$RDME3UDBPdx/VWsy4qPdhe/T93.dUj3dVybe0QH9lEOnGK5Js3W3W" />
+    		<column name="password" value="$2a$10$BYnzUkQZ7TobHTQBQBQf7u/t1Vy7XpLsUIYT6NA.mEO0CE/iwxeZ6" />
     		<column name="status" value="1" />
     		<column name="is_locked" value="0" />
     		<column name="is_active" value="1" />
