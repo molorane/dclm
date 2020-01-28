@@ -54,7 +54,9 @@ public class User implements Serializable{
 	private LocalDate expiryDate;
 
 	@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-	@JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
+	@JoinTable(name = "user_role",
+			joinColumns = @JoinColumn(name = "user_id"),
+			inverseJoinColumns = @JoinColumn(name = "role_id"))
 	private Set<Role> roles = new HashSet<>();
 	
 	@OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
@@ -171,7 +173,7 @@ public class User implements Serializable{
 	}
 
 	public boolean accountExpired() {
-		return this.expiryDate.isAfter(LocalDate.now());
+		return !expiryDate.isAfter(LocalDate.now());
 	}
 
 	public UserInfo getUserInfo() {
