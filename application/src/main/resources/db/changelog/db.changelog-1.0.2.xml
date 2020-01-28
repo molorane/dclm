@@ -63,7 +63,7 @@
     		<column name="status" value="1" />
     		<column name="is_locked" value="0" />
     		<column name="is_active" value="1" />
-			<column name="expiry_date" valueDate="now()" />
+			<column name="expiry_date" defaultValueDate="${now}" />
     	</insert>
     	
     	<insert tableName="${userTable}">
@@ -74,7 +74,7 @@
     		<column name="status" value="1" />
     		<column name="is_locked" value="0" />
     		<column name="is_active" value="1" />
-			<column name="expiry_date" valueDate="now()" />
+			<column name="expiry_date" valueDate="${now}" />
     	</insert>
     	
     	<insert tableName="${userTable}">
@@ -85,7 +85,7 @@
     		<column name="status" value="1" />
     		<column name="is_locked" value="0" />
     		<column name="is_active" value="1" />
-			<column name="expiry_date" valueDate="now()" />
+			<column name="expiry_date" valueDate="${now}" />
     	</insert>
     	
     	<insert tableName="${userTable}">
@@ -96,7 +96,7 @@
     		<column name="status" value="1" />
     		<column name="is_locked" value="0" />
     		<column name="is_active" value="1" />
-			<column name="expiry_date" valueDate="now()" />
+			<column name="expiry_date" valueDate="${now}" />
     	</insert>
     	
     	<insert tableName="${userTable}">
@@ -107,7 +107,7 @@
     		<column name="status" value="1" />
     		<column name="is_locked" value="0" />
     		<column name="is_active" value="1" />
-			<column name="expiry_date" valueDate="now()" />
+			<column name="expiry_date" valueDate="${now}" />
     	</insert>
 
 		<insert tableName="${userTable}">
@@ -118,7 +118,7 @@
 			<column name="status" value="1" />
 			<column name="is_locked" value="0" />
 			<column name="is_active" value="1" />
-			<column name="expiry_date" valueDate="now()" />
+			<column name="expiry_date" valueDate="${now}" />
 		</insert>
     
     </changeSet>
