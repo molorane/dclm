@@ -339,12 +339,14 @@
 												<label class="control-label col-md-2">Gender</label>
 												<div class="col-md-10">
 													<label class="label-radio inline">
-														<input type="radio" name="inline-radio" / >
+														<input type="radio" name="inline-radio" th:field="${user.userInfo.gender}"
+														th:value="Male"/>
 														<span class="custom-radio"></span>
 														Male
 													</label>
 													<label class="label-radio inline">
-														<input type="radio" name="inline-radio" />
+														<input type="radio" name="inline-radio" th:field="${user.userInfo.gender}"
+														th:value="Female"/>
 														<span class="custom-radio"></span>
 														Female
 													</label>

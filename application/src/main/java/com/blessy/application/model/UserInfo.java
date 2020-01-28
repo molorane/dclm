@@ -1,7 +1,11 @@
 package com.blessy.application.model;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import javax.persistence.*;
-import java.util.Date;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Past;
+import java.time.LocalDate;
 
 @Entity
 @Table(name = "user_info")
@@ -9,13 +13,23 @@ public class UserInfo {
 
 	@Id
 	private Long user_id;
+
+	@NotEmpty(message = "last name Required.")
 	private String last_name;
+
+	@NotEmpty(message = "first name Required.")
 	private String first_name;
+
 	private String other_name;
+
+	@Enumerated(EnumType.STRING)
+	private Gender gender;
+
 	private String profile;
-	
-	@Temporal(TemporalType.DATE)
-	private Date dob;
+
+	@Past
+	@DateTimeFormat(pattern = "dd/MM/yyyy")
+	private LocalDate dob;
 	
 	@OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	@JoinColumn(name = "user_id", referencedColumnName = "user_id")
@@ -61,12 +75,20 @@ public class UserInfo {
 		this.other_name = other_name;
 	}
 
-	public Date getDob() {
+	public LocalDate getDob() {
 		return dob;
 	}
 
-	public void setDob(Date dob) {
+	public void setDob(LocalDate dob) {
 		this.dob = dob;
+	}
+
+	public Gender getGender() {
+		return gender;
+	}
+
+	public void setGender(Gender gender) {
+		this.gender = gender;
 	}
 
 	public String getProfile() {

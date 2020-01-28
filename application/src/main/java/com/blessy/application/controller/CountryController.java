@@ -24,7 +24,6 @@ public class CountryController {
     private final ContinentService continentService;
     private final CountryService countryService;
 
-
     @RequestMapping("addCountry/{continent_id}")
     public String addCountry(@PathVariable("continent_id") Long continent_id, Model model) {
         Continent continent = continentService.findById(continent_id).get();

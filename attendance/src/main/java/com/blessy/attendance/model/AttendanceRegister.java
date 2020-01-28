@@ -6,7 +6,7 @@ import lombok.Setter;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
-import java.util.Date;
+import java.time.LocalDate;
 
 @Entity
 @Table(name = "attendance_register")
@@ -25,10 +25,10 @@ public class AttendanceRegister {
     @Getter
     @Setter
     @DateTimeFormat(pattern = "yyyy-MM-dd")
-    Date start_date;
+    LocalDate start_date;
 
     @Getter
     @Setter
     @DateTimeFormat(pattern = "yyyy-MM-dd")
-    Date end_date;
+    LocalDate end_date;
 }

@@ -58,8 +58,6 @@ public class ContinentController {
         return WebPage.CONTINENT_COUNTRIES.getPageName();
     }
 
-
-
     @RequestMapping("{continent_id}/{country_id}")
     public String countryStates(@PathVariable("country_id") Long country_id, Model model) {
         Country country = countryService.findById(country_id).get();

@@ -23,8 +23,8 @@ public class ProfileController {
 		this.userService = userService;
 		this.denominationService = denominationService;
 	}
-	
-	@RequestMapping("/profile")
+
+	@RequestMapping
 	public String profile(Principal principal, Model model) {
 		String username = principal.getName();
 		User user = userService.findByUsername(username).get();
@@ -37,9 +37,7 @@ public class ProfileController {
 
 	@RequestMapping("/change_password")
 	public String profile() {
-
 		return WebPage.CHANGE_PASSWORD.getPageName();
-
 	}
 
 }

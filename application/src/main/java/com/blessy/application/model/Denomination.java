@@ -4,7 +4,8 @@ import lombok.Data;
 import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
-import java.util.Date;
+import javax.validation.constraints.Past;
+import java.time.LocalDate;
 
 @Entity
 @Table(name = "denomination")
@@ -27,9 +28,10 @@ public class Denomination {
 	@Column(name = "founder", unique = true)
 	private String founder;
 
-	@Temporal(TemporalType.DATE)
 	@Column(name = "start_date", unique = true)
-	private Date startDate;
+	@Past
+	@DateTimeFormat(pattern = "dd/MM/yyyy")
+	private LocalDate startDate;
 	
 	@Column(name = "hq", unique = true)
 	private String hq;

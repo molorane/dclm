@@ -7,8 +7,7 @@ import javax.validation.constraints.Email;
 import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 import java.io.Serializable;
-import java.util.Calendar;
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -45,9 +44,14 @@ public class User implements Serializable{
 	private boolean isLocked;
 	
 	private boolean isActive;
-	
+
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
-	private Date expiryDate;
+	@Column(name = "created_date", unique = true)
+	private LocalDate createdDate;
+
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
+	@Column(name = "expiry_date", unique = true)
+	private LocalDate expiryDate;
 
 	@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
 	@JoinTable(name = "user_role", joinColumns = @JoinColumn(name = "user_id"), inverseJoinColumns = @JoinColumn(name = "role_id"))
@@ -58,9 +62,11 @@ public class User implements Serializable{
 	private UserInfo userInfo;
 	
 	public User() {
-		Calendar cal = Calendar.getInstance();
-        cal.add(Calendar.MONTH, 1);
-		this.expiryDate = cal.getTime();
+	}
+
+	@PrePersist
+	public void prePersist() {
+		expiryDate = LocalDate.now().plusMonths(1);
 		this.isActive = true;
 		this.isLocked = false;
 		this.status = 1;
@@ -148,16 +154,24 @@ public class User implements Serializable{
 		this.isActive = isActive;
 	}
 
-	public Date getExpiryDate() {
+	public LocalDate getCreatedDate() {
+		return createdDate;
+	}
+
+	public void setCreatedDate(LocalDate createdDate) {
+		this.createdDate = createdDate;
+	}
+
+	public LocalDate getExpiryDate() {
 		return expiryDate;
 	}
 
-	public void setExpiryDate(Date expiryDate) {
+	public void setExpiryDate(LocalDate expiryDate) {
 		this.expiryDate = expiryDate;
 	}
-	
+
 	public boolean accountExpired() {
-		return this.expiryDate.before(new Date());
+		return this.expiryDate.isAfter(LocalDate.now());
 	}
 
 	public UserInfo getUserInfo() {
