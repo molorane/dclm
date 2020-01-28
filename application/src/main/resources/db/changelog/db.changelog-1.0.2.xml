@@ -213,7 +213,7 @@
     		<column name="name" value="Deeper Christian Life Ministry South Africa" />
     		<column name="sname" value="DCLM" />
     		<column name="country" value="Nigeria" />
-    		<column name="founder" value="Kumuyi Fulio" />
+    		<column name="founder" value="William Kumuyi Fulio" />
     		<column name="start_date" value="1973-01-01" />
     		<column name="hq" value="Abujar" />
     		<column name="gps_lat" value="9.0962524" />
@@ -465,6 +465,14 @@
     	</insert>
     	
     </changeSet>
+
+	<changeSet id="modifyDenominationFounder" author="${author}">
+		<validCheckSum>8:c1db9163c8d660c498a6486cb2c8168b</validCheckSum>
+		<update tableName="${denominationTable}">
+			<column name="founder" value="William Fulio Kumuyi" />
+			<where>id='1'</where>
+		</update>
+	</changeSet>
 
 
     

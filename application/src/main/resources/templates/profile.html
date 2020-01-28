@@ -4,7 +4,7 @@
        layout:decorate="~{layouts/main-layout}">
 
 <head>
-	<title>Layout</title>
+	<title>Profile</title>
 </head>
 
 <body>
@@ -21,7 +21,7 @@
 			</div><!--breadcrumb-->
 			<ul class="tab-bar grey-tab">
 				<li class="active">
-					<a href="profile.php#overview" data-toggle="tab">
+					<a href="#overview" data-toggle="tab">
 						<span class="block text-center">
 							<i class="fa fa-home fa-2x"></i> 
 						</span>
@@ -29,7 +29,7 @@
 					</a>
 				</li>
 				<li>
-					<a href="profile.php#edit" data-toggle="tab">
+					<a href="#edit" data-toggle="tab">
 						<span class="block text-center">
 							<i class="fa fa-edit fa-2x"></i> 
 						</span>
@@ -37,10 +37,18 @@
 					</a>
 				</li>
 				<li>
-					<a href="profile.php#message" data-toggle="tab">
+					<a href="#account" data-toggle="tab">
 						<span class="block text-center">
-							<i class="fa fa-envelope fa-2x"></i> 
+							<i class="fa fa-user fa-2x"></i>
 						</span>	
+						Account
+					</a>
+				</li>
+				<li>
+					<a href="#message" data-toggle="tab">
+						<span class="block text-center">
+							<i class="fa fa-envelope fa-2x"></i>
+						</span>
 						Messages
 					</a>
 				</li>
@@ -374,7 +382,7 @@
 											<div class="form-group">
 												<label class="control-label col-md-2">Home Language</label>												
 												<div class="col-md-10">
-													<input type="text" class="form-control input-sm" id="home_language" placeholder="languge" value="">
+													<label class="col-lg-2 control-label">Title</label>
 												</div><!-- /.col -->
 											</div><!-- /form-group -->
 											<div class="form-group">
@@ -765,6 +773,39 @@
 									</div>
 								</div><!-- /panel -->
 							</div><!-- /tab3 -->
+							<div class="tab-pane fade" id="account">
+								<div class="panel panel-default inbox-panel">
+									<div class="panel-heading">
+										Account
+									</div>
+									<ul class="list-group">
+										<li class="list-group-item clearfix inbox-item">
+											<span class="from" >USER ID</span>
+											<span class="detail" th:text="${session.authenticated_user.user_id}">
+												no value
+											</span>
+										</li>
+										<li class="list-group-item clearfix inbox-item">
+											<span class="from" >EMAIL</span>
+											<span class="detail" th:text="${session.authenticated_user.email}">
+												no value
+											</span>
+										</li>
+										<li class="list-group-item clearfix inbox-item">
+											<span class="from" >EXPIRY ON</span>
+											<span class="detail" th:text="${session.authenticated_user.expiryDate}">
+												no value
+											</span>
+										</li>
+										<li class="list-group-item clearfix inbox-item">
+											<span class="from" >CREATED ON</span>
+											<span class="detail" th:text="${session.authenticated_user.createdDate}">
+												no value
+											</span>
+										</li>
+									</ul><!-- /list-group -->
+								</div><!-- /panel -->
+							</div>
 						</div><!-- /tab-content -->
 					</div><!-- /.col -->
 				</div><!-- /.row -->			

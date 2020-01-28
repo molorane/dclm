@@ -24,10 +24,14 @@ public class LoginSuccessHandler extends SimpleUrlAuthenticationSuccessHandler {
 
 	@Override
 	protected void handle(HttpServletRequest request, HttpServletResponse response, Authentication authentication)
-			throws IOException, ServletException {
+			throws IOException {
 		// TODO Auto-generated method stub
-		
-		applicationAuthenticationSuccessHandler.onAuthenticationSuccess(request, response, authentication);
+
+		try {
+			applicationAuthenticationSuccessHandler.onAuthenticationSuccess(request, response, authentication);
+		} catch (ServletException e) {
+			e.printStackTrace();
+		}
 
 		String targetUrl = determineTargetUrl(authentication);
 		if (response.isCommitted()) {

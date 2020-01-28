@@ -5,6 +5,8 @@ import com.blessy.application.model.Role;
 import com.blessy.application.model.User;
 import com.blessy.application.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
@@ -19,6 +21,7 @@ import java.util.Set;
 public class UserDetailsServiceImpl implements UserDetailsService {
 
 	private final UserRepository userRepository;
+	protected final Log logger = LogFactory.getLog(this.getClass());
 	
 	@Transactional
 	@Override
@@ -40,7 +43,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
 
 	public void toList(Set<Role> roles) {
 		for (Role role : roles) {
-			System.out.println("Role: " + role.getRole());
+			logger.info("Role: " + role.getRole());
 		}
 	}
 

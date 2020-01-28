@@ -8,6 +8,7 @@ import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.Size;
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -47,7 +48,7 @@ public class User implements Serializable{
 
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	@Column(name = "created_date", unique = true)
-	private LocalDate createdDate;
+	private LocalDateTime createdDate;
 
 	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	@Column(name = "expiry_date", unique = true)
@@ -156,11 +157,11 @@ public class User implements Serializable{
 		this.isActive = isActive;
 	}
 
-	public LocalDate getCreatedDate() {
+	public LocalDateTime getCreatedDate() {
 		return createdDate;
 	}
 
-	public void setCreatedDate(LocalDate createdDate) {
+	public void setCreatedDate(LocalDateTime createdDate) {
 		this.createdDate = createdDate;
 	}
 

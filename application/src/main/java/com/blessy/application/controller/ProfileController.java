@@ -28,8 +28,6 @@ public class ProfileController {
 	public String profile(Principal principal, Model model) {
 		String username = principal.getName();
 		User user = userService.findByUsername(username).get();
-		System.out.println("User has authorities: " + user.getRoles());
-		System.out.println("User ID: " + user.getUser_id());
 		model.addAttribute("user", user);
 		model.addAttribute("denomination", denominationService.getDenomination(1));
 		return WebPage.PROFILE.getPageName();

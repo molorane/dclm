@@ -28,7 +28,7 @@ public class UserInfo {
 	private String profile;
 
 	@Past
-	@DateTimeFormat(pattern = "dd/MM/yyyy")
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private LocalDate dob;
 	
 	@OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)

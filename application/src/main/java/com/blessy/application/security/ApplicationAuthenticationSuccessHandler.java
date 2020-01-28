@@ -3,6 +3,8 @@ package com.blessy.application.security;
 import com.blessy.application.model.CustomUserDetails;
 import com.blessy.application.model.User;
 import com.blessy.application.service.DenominationService;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.web.authentication.SavedRequestAwareAuthenticationSuccessHandler;
@@ -21,6 +23,7 @@ public class ApplicationAuthenticationSuccessHandler extends SavedRequestAwareAu
 	private static final int SESSION_INACTIVE_INTERVAL_HOURS = 2;
     public static final int SESSION_INACTIVE_INTERVAL_SECONDS = SESSION_INACTIVE_INTERVAL_HOURS * 60 * 60;
 
+    protected final Log logger = LogFactory.getLog(this.getClass());
 
     @Autowired
     DenominationService denominationService;
@@ -35,7 +38,7 @@ public class ApplicationAuthenticationSuccessHandler extends SavedRequestAwareAu
         session.setAttribute("denomination",denominationService.getDenomination(1));
         session.setMaxInactiveInterval(SESSION_INACTIVE_INTERVAL_SECONDS); // Possible to have this value change between Roles
 
-        System.out.println(String.format("User %s successfully logged in", user.getEmail()));
+        logger.info(String.format("User %s successfully logged in", user.getEmail()));
 
         super.onAuthenticationSuccess(request, response, authentication);
     }
