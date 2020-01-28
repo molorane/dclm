@@ -463,12 +463,6 @@
     		<column name="status_id" value="1" />
     		<column name="recorded_by" value="2019" />
     	</insert>
-
-		<sql>
-
-			UPDATE ${userTable} SET `expiry_date` = '2019-10-30';
-
-		</sql>
     	
     </changeSet>
 
