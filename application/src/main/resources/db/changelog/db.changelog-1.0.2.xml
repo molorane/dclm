@@ -63,9 +63,9 @@
     		<column name="status" value="1" />
     		<column name="is_locked" value="0" />
     		<column name="is_active" value="1" />
-			<column name="expiry_date" valueDate="${now}" />
+			<column name="expiry_date" valueDate="DATE_ADD(CURRENT_DATE,INTERVAL 30 DAY)" />
     	</insert>
-    	
+
     	<insert tableName="${userTable}">
     		<column name="user_id" value="2014098617" />
     		<column name="username" value="fedora" />
@@ -74,9 +74,9 @@
     		<column name="status" value="1" />
     		<column name="is_locked" value="0" />
     		<column name="is_active" value="1" />
-			<column name="expiry_date" valueDate="${now}" />
+			<column name="expiry_date" valueDate="${expiry_date}" />
     	</insert>
-    	
+
     	<insert tableName="${userTable}">
     		<column name="user_id" value="2014098618" />
     		<column name="username" value="blessy" />
@@ -85,9 +85,9 @@
     		<column name="status" value="1" />
     		<column name="is_locked" value="0" />
     		<column name="is_active" value="1" />
-			<column name="expiry_date" valueDate="${now}" />
+			<column name="expiry_date" valueDate="${expiry_date}" />
     	</insert>
-    	
+
     	<insert tableName="${userTable}">
     		<column name="user_id" value="2014098619" />
     		<column name="username" value="langi" />
@@ -96,9 +96,9 @@
     		<column name="status" value="1" />
     		<column name="is_locked" value="0" />
     		<column name="is_active" value="1" />
-			<column name="expiry_date" valueDate="${now}" />
+			<column name="expiry_date" valueDate="${expiry_date}" />
     	</insert>
-    	
+
     	<insert tableName="${userTable}">
     		<column name="user_id" value="2019" />
     		<column name="username" value="admin" />
@@ -107,7 +107,7 @@
     		<column name="status" value="1" />
     		<column name="is_locked" value="0" />
     		<column name="is_active" value="1" />
-			<column name="expiry_date" valueDate="${now}" />
+			<column name="expiry_date" valueDate="${expiry_date}" />
     	</insert>
 
 		<insert tableName="${userTable}">
@@ -118,9 +118,9 @@
 			<column name="status" value="1" />
 			<column name="is_locked" value="0" />
 			<column name="is_active" value="1" />
-			<column name="expiry_date" valueDate="${now}" />
+			<column name="expiry_date" valueDate="${expiry_date}" />
 		</insert>
-    
+
     </changeSet>
     
     <changeSet id="defaultAccountRoles" author="${author}">

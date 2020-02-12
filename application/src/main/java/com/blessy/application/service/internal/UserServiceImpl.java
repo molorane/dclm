@@ -31,9 +31,6 @@ public class UserServiceImpl implements UserService {
 	 @Autowired
 	 private PasswordEncoder passwordEncoder;
 
-	 @Autowired
-	 private UserService userService;
-
 	@Override
 	public User addUser(User user) {
 		// TODO Auto-generated method stub

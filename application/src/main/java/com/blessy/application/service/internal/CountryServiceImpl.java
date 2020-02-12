@@ -6,6 +6,7 @@ import com.blessy.application.service.CountryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Optional;
 
@@ -38,4 +39,10 @@ public class CountryServiceImpl implements CountryService {
     public Optional<Country> findById(Long id) {
         return countryRepository.findById(id);
     }
+
+    @Override
+    public List<Object> geAllCountries(int continent_id) {
+        return countryRepository.geAllCountries(continent_id);
+    }
+
 }

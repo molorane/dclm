@@ -2,6 +2,7 @@ package com.blessy.application.service;
 
 import com.blessy.application.model.Country;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Optional;
 
@@ -11,4 +12,5 @@ public interface CountryService {
     Optional<Country> findByName(String name);
     List<Country> findAll();
     Optional<Country> findById(Long id);
+    List<Object> geAllCountries(int continent_id);
 }

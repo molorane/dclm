@@ -1,6 +1,7 @@
 package com.blessy.application;
 
 import com.blessy.application.service.ContinentService;
+import com.blessy.application.service.CountryService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,6 +17,9 @@ public class Application implements CommandLineRunner {
     @Autowired
     private ContinentService continentService;
 
+    @Autowired
+    private CountryService countryService;
+
     public static void main(String[] args) {
         SpringApplication.run(Application.class, args);
     }
@@ -30,7 +34,10 @@ public class Application implements CommandLineRunner {
                  ) {
                 logger.info("  "+country.getName());
             }
-
         }*/
+
+        countryService.geAllCountries(1).forEach((row) -> {
+            logger.info(row.toString());
+        });
     }
 }

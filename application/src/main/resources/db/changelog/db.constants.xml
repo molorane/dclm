@@ -5,7 +5,7 @@
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.1.xsd
     http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
         
-	<property name="now" value="DATE_ADD(CURRENT_DATE,INTERVAL 30 DAY)" dbms="mysql" />
+	<property name="expiry_date" value="DATE_ADD(CURRENT_DATE,INTERVAL 30 DAY)" />
 	<property name="author" value="Mothusi Molorane" />
 	<property name="roleTable" value="tbl_role" />
 	<property name="userTable" value="tbl_user" />
