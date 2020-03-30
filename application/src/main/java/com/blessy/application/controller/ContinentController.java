@@ -1,11 +1,9 @@
 package com.blessy.application.controller;
 
 
-import com.blessy.application.model.City;
 import com.blessy.application.model.Continent;
 import com.blessy.application.model.Country;
 import com.blessy.application.model.State;
-import com.blessy.application.repository.CityRepository;
 import com.blessy.application.service.CityService;
 import com.blessy.application.service.ContinentService;
 import com.blessy.application.service.CountryService;
